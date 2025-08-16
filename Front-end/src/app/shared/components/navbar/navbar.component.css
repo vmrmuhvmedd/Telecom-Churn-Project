@@ -1,0 +1,28 @@
+.navbar {
+  background-color: #111f3f;
+  height: 150px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.title-animate {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeSlideIn 1s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

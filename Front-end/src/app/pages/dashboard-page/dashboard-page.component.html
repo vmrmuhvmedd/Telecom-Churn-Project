@@ -1,0 +1,89 @@
+<section class="card-container">
+  <div class="card card-small">
+    <div class="label-text text-center">Active Customers</div>
+    <h2 class="main-value">{{ activeCustomers | number }}</h2>
+    <hr />
+    <div class="flex justify-between text-sm">
+      <div>ΔC</div>
+      <div class="down">{{ DetaC | number }} ▼</div>
+    </div>
+    <div class="flex justify-between text-sm">
+      <div>NC</div>
+      <div class="up">{{ NC | number }} ▲</div>
+    </div>
+  </div>
+
+  <div class="card card-small">
+    <div class="label-text text-center">Churn Rate</div>
+    <h2 class="main-value">{{ churnRate | number:'1.1-1' }}%</h2>
+    <hr />
+    <div class="flex justify-between text-sm">
+      <div>Churned</div>
+      <div class="down">{{ churnedCustomers | number }} ▼</div>
+    </div>
+  </div>
+
+  <div class="card card-small">
+    <div class="label-text text-center">ARPU</div>
+    <h2 class="main-value">${{ arpu | number:'1.0-0' }}</h2>
+    <hr />
+    <div class="flex justify-between text-sm">
+      <div>ΔRev</div>
+      <div class="down">{{ REV | number:'1.0-0' }} ▼</div>
+    </div>
+  </div>
+
+  <div class="card card-small">
+    <div class="label-text text-center">Churned Customers</div>
+    <h2 class="main-value">{{ churnedCustomers | number }}</h2>
+    <hr />
+    <div class="text-center text-sm text-gray-500">
+      Avg Tenure: {{ avgTenure | number:'1.0-0' }} Months
+    </div>
+  </div>
+
+  <div class="card card-small gender-card">
+    <div class="label-text mb-2">Gender</div>
+    <div class="gender-row">
+      <span>Female</span>
+      <span>{{ femaleCount | number }}</span>
+    </div>
+    <div class="gender-row">
+      <span>Male</span>
+      <span>{{ maleCount | number }}</span>
+    </div>
+  </div>
+</section>
+<section class="charts-container">
+  <div class="chart-col" >
+    <div class="chart-card tall">
+      <div class="label-text text-center">Churn Rate by Tenure Group</div>
+      <canvas #churnChart style="padding: 1rem 1rem 2rem 1rem;"></canvas>
+    </div>
+  </div>
+
+  <div class="chart-col">
+    <div class="chart-card">
+      <div class="label-text text-center">Churn by Payment Method</div>
+      <canvas #paymentChartRef style="padding: 1rem 1rem 2rem 1rem;"></canvas>
+    </div>
+    <div class="chart-card">
+      <div class="label-text text-center">Tech Support Count by Tenure</div>
+      <canvas #techSupportChartRef style="padding: 1rem 1rem 2rem 1rem;"></canvas>
+    </div>
+  </div>
+
+  <div class="chart-col small">
+    <div class="chart-card">
+      <div class="label-text text-center">Revenue by Contract Term</div>
+      <canvas #revenueChartRef></canvas>
+    </div>
+    <div class="chart-card">
+      <div class="label-text text-center">Churns Internet Service</div>
+      <canvas #churnInternetChartRef></canvas>
+    </div>
+  </div>
+</section>
+
+
+

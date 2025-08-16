@@ -1,0 +1,157 @@
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1.2rem;
+  padding: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  padding: 1rem 1.4rem;
+  min-height: 173.52px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.main-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: #111827;
+  margin: 0.3rem 0;
+}
+
+.label-text {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: #344050;
+  text-align: center;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 0.8rem 0;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-sm {
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.up {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+.down {
+  color: #f44336;
+  font-weight: 600;
+}
+
+.gender-card {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.gender-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #3a3f59;
+}
+
+.gender-card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.gender-card::-webkit-scrollbar-thumb {
+  background-color: #1a274c;
+  border-radius: 3px;
+}
+
+@media (min-width: 1024px) {
+  .dashboard-container {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    min-width: 180px;
+  }
+}
+.charts-container {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  gap: 1.2rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  max-width: 100%;
+  height: 580px;
+  overflow: hidden;
+}
+
+.chart-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  flex: 1;   
+  min-height: 0;
+}
+
+.chart-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.chart-card:hover {
+  transform: translateY(-5px);
+}
+
+.chart-card canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.chart-card {
+  flex: 1;
+  min-height: 0;
+}
+
+.label-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #444;
+  text-align: center;
+}
