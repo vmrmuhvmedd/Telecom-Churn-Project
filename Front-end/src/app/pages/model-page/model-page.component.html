@@ -1,1 +1,93 @@
-<p>model-page works!</p>
+<div class="card form-card">
+  <div class="label-text">Churn Prediction</div>
+  <hr />
+
+  <form [formGroup]="predictionForm" (ngSubmit)="onSubmit()" class="form-grid">
+    <div class="form-group">
+      <label for="tenure">Tenure</label>
+      <input id="tenure" type="number" formControlName="tenure" placeholder="Enter tenure" />
+    </div>
+
+    <div class="form-group">
+      <label for="monthly">Monthly Charges</label>
+      <input id="monthly" type="number" formControlName="MonthlyCharges" placeholder="Enter monthly charges" />
+    </div>
+
+    <div class="form-group">
+      <label for="total">Total Charges</label>
+      <input id="total" type="number" formControlName="TotalCharges" placeholder="Enter total charges" />
+    </div>
+
+    <div class="form-group">
+      <label for="internet">Internet Service</label>
+      <select id="internet" formControlName="InternetService">
+        <option value="DSL">DSL</option>
+        <option value="Fiber optic">Fiber optic</option>
+        <option value="No">No</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="security">Online Security</label>
+      <select id="security" formControlName="OnlineSecurity">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No internet service">No internet service</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="backup">Online Backup</label>
+      <select id="backup" formControlName="OnlineBackup">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No internet service">No internet service</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="tech">Tech Support</label>
+      <select id="tech" formControlName="TechSupport">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No internet service">No internet service</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="contract">Contract</label>
+      <select id="contract" formControlName="Contract">
+        <option value="Month-to-month">Month-to-month</option>
+        <option value="One year">One year</option>
+        <option value="Two year">Two year</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="payment">Payment Method</label>
+      <select id="payment" formControlName="PaymentMethod">
+        <option value="Electronic check">Electronic check</option>
+        <option value="Mailed check">Mailed check</option>
+        <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+        <option value="Credit card (automatic)">Credit card (automatic)</option>
+      </select>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" [disabled]="loading || predictionForm.invalid">
+        {{ loading ? "Loading..." : "Predict" }}
+      </button>
+    </div>
+  </form>
+
+  <div class="result" *ngIf="response">
+    <h3>
+      {{ response.prediction ? 'Customer will churn' : 'Customer will not churn' }}
+      with {{ (response.probability * 100) | number:'1.0-2' }}%
+    </h3>
+
+    <div class="chart-wrapper">
+      <canvas #probChart></canvas>
+    </div>
+  </div>
+</div>

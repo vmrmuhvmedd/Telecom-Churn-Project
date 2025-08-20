@@ -253,7 +253,7 @@ export class DashboardPageComponent implements OnInit, AfterViewInit {
   }
 
   loadRevenueChart() {
-    const contracts = ['Month-to-month', 'One year', 'Two year'];
+    const contracts = ['Month-to-month', 'Two year', 'One year'];
 
     const totalMonthlyCharges = contracts.map(contract =>
       this.customers
@@ -288,7 +288,7 @@ export class DashboardPageComponent implements OnInit, AfterViewInit {
           datalabels: {
             anchor: 'start',
             align: 'end',
-            color: '#000000ff',
+            color: '#0e0d0d96',
             formatter: (value: number, context) => {
               return `${context.chart.data.labels![context.dataIndex]}: $${value.toFixed(2)}`;
             },
@@ -351,5 +351,4 @@ export class DashboardPageComponent implements OnInit, AfterViewInit {
       plugins: [ChartDataLabels]
     });
   }
-
 }

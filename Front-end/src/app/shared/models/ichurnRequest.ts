@@ -11,7 +11,7 @@ export interface IChurnRequest {
 }
 
 export interface IChurnResponse {
-  prediction: boolean;
+  prediction: number;
   probability: number;
   threshold: number;
 }
